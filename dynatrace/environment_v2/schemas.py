@@ -52,5 +52,5 @@ class ManagementZone(DynatraceObject):
 
 class EnrichedManagementZoneDto(ManagementZone):
     def _create_from_raw_data(self, raw_element: Dict[str, Any]):
-        super(raw_element)
+        super()._create_from_raw_data(raw_element)
         self.source_setting: Optional[str] = raw_element.get("sourceSetting")
