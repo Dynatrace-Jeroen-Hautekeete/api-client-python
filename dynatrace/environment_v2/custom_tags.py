@@ -145,7 +145,7 @@ class TagContext(Enum):
 class EnrichedTagDto(METag):
     def _create_from_raw_data(self, raw_element: Dict[str, Any]):
         super()._create_from_raw_data(raw_element)
-        self.source: Optional[TagSource] = ( TagSource(raw_element.get("source")) if "source" in raw_element.keys() else None )
+        self.source: Optional[TagSource] = TagSource(raw_element.get("source")) if raw_element.get("source") else None
         self.source_setting: Optional[str] = raw_element.get("sourceSetting")
 
 
